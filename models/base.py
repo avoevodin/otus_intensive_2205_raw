@@ -14,6 +14,11 @@ class Base:
     yandex_code = Column(String, unique=True, nullable=False)
     title = Column(String, nullable=False, default="", server_default="")
 
+    def __init__(self, yandex_code, title):
+        super(Base, self).__init__()
+        self.yandex_code = yandex_code
+        self.title = title
+
     def __repr__(self):
         return str(self)
 

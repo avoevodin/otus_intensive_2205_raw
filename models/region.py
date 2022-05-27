@@ -20,3 +20,14 @@ class Region(TimestampMixin, Base):
     if TYPE_CHECKING:
         country: Country
         settlements: List[Settlement]
+
+    def __str__(self):
+        return (
+            f"{self.__class__.__name__}("
+            f"id={self.id}, "
+            f"title={self.title!r}, "
+            f"yandex_code={self.yandex_code}, "
+            f"country_id={self.country_id}, "
+            f"created_at={self.created_at}"
+            ")"
+        )

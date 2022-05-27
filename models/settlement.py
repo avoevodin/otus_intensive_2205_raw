@@ -21,3 +21,23 @@ class Settlement(TimestampMixin, Base):
     if TYPE_CHECKING:
         country: Country
         region: Region
+
+    def __str__(self):
+        return (
+            f"{self.__class__.__name__}("
+            f"id={self.id}, "
+            f"title={self.title!r}, "
+            f"yandex_code={self.yandex_code}, "
+            f"country_id={self.country_id}, "
+            f"region_id={self.region_id}, "
+            f"created_at={self.created_at}"
+            ")"
+        )
+
+    def get_code(self):
+        return {
+            "title": self.title,
+            "country_code": self.country.id,
+            "region_code": self.region.id if self.region else "",
+            "code": self.yandex_code,
+        }
