@@ -39,26 +39,26 @@ def main():
         countries_list = list(data_dict.items())[0][1]
     # pprint(countries_list[140])
     # pprint(list(filter(lambda x: x['title'] == "Россия", countries_list))[0])
-    print(
+    pprint(
         list(
             map(
-                lambda x: str(x["regions"][3]),
-                filter(lambda x: x["title"] == "Россия", countries_list),
+                lambda x: x,
+                filter(lambda x: x["title"] == "Куба", countries_list),
             )
         )
     )
-    with open(f"temp/{Path(FILENAME).stem}_output.json", "w", encoding="UTF-8") as f:
-        json.dump(
-            list(
-                map(
-                    lambda x: x["regions"][3],
-                    filter(lambda x: x["title"] == "Россия", countries_list),
-                )
-            ),
-            f,
-            ensure_ascii=False,
-            indent=4,
-        )
+    # with open(f"temp/{Path(FILENAME).stem}_output.json", "w", encoding="UTF-8") as f:
+    #     json.dump(
+    #         list(
+    #             map(
+    #                 lambda x: x["regions"][3],
+    #                 filter(lambda x: x["title"] == "Россия", countries_list),
+    #             )
+    #         ),
+    #         f,
+    #         ensure_ascii=False,
+    #         indent=4,
+    #     )
 
 
 if __name__ == "__main__":
