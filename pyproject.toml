@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.9"
 SQLAlchemy = {extras = ["postgres_asyncpg"], version = "^1.4.36"}
 alembic = "^1.7.7"
+psycopg2 = "^2.9.3"
 
 [tool.poetry.dev-dependencies]
 

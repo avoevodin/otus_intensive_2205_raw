@@ -12,8 +12,8 @@ if TYPE_CHECKING:
 
 
 class Settlement(TimestampMixin, Base):
-    region_id: Column(Integer, ForeignKey("regions.id"), nullable=True)
-    country_id: Column(Integer, ForeignKey("countries.id"))
+    region_id = Column(Integer, ForeignKey("regions.id"), nullable=True)
+    country_id = Column(Integer, ForeignKey("countries.id"))
 
     region = relationship("Region", back_populates="settlements")
     country = relationship("Country", back_populates="settlements")
